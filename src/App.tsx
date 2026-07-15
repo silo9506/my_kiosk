@@ -618,9 +618,6 @@ export default function MomstouchKiosk() {
               <h2 className="text-xl font-black tracking-wider">
                 제 조 지 시 서 (영수증)
               </h2>
-              <p className="text-xs text-gray-500 mt-1">
-                Flavor Manufacturing Token
-              </p>
             </div>
 
             {/* 메인 제품 정보 */}
@@ -653,24 +650,19 @@ export default function MomstouchKiosk() {
               </div>
 
               {/* [신규 반영] 영수증 중앙에 필요한 배합통 규격 및 개수 노출 */}
-              <div className="mt-3 p-3 bg-amber-50 rounded-xl border border-amber-200 flex flex-col gap-1">
-                <span className="text-amber-950 font-black text-xs">
-                  ⚠️ [공정 포장 안내] 배합통 준비 규격
-                </span>
-                <div className="flex flex-wrap gap-2 mt-0.5">
-                  {receiptData.containers.map((container, idx) => (
-                    <span
-                      key={idx}
-                      className="bg-amber-950 text-white font-black text-xs px-2.5 py-1 rounded-md"
-                    >
-                      {container.spec}kg 통 ➔{" "}
-                      <span className="text-yellow-400 font-black text-sm">
-                        {container.count}
-                      </span>
-                      개
+              <div className="text-right  flex flex-col">
+                {receiptData.containers.map((container, idx) => (
+                  <span
+                    key={idx}
+                    className=" font-black text-xs px-2.5 py-1 rounded-md"
+                  >
+                    {container.spec}kg 통 X{" "}
+                    <span className="text-yellow-400 font-black text-sm">
+                      {container.count}
                     </span>
-                  ))}
-                </div>
+                    개
+                  </span>
+                ))}
               </div>
             </div>
 
@@ -700,7 +692,7 @@ export default function MomstouchKiosk() {
 
             {/* 영수증 하단 안내 */}
             <div className="text-center text-[11px] text-gray-400 space-y-1 border-t border-dashed border-gray-400 pt-4 print:hidden">
-              <p>지정된 배합통 규격 수량을 사전에 정렬해 주십시오.</p>
+              <p>기타 특이사항</p>
             </div>
 
             {/* 제어 버튼 */}
